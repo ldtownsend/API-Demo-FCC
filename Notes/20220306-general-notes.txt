@@ -1,0 +1,46 @@
+Virtual Environments:
+
+Eliminates issues wrt backwards compatability in different
+versions of a package that we need to install
+
+Example:
+Project 1 --> VENV-1 --> Fastapi v1.2.1
+
+Project 2 --> VENV-2 --> Fastapi v2.4.3
+
+Now downloading the newer version of Fastapi be a problem
+
+Select the terminal dropdown in the menu at the top of the
+create a new terminal then change the type from powershell to cmd
+(note this is simply a preference, you can use powershell)
+
+Now we need to open the terminal and make sure we're in the correct 
+directory. Then , in the erminal, type py -3-m venv <name-we used venv>
+
+This will create a new series of folders and files
+
+Go to view from the menu, select command pallete
+Search python select interpretrer and type the path
+to the python.exe file, which in this case is :
+.\venv\Scripts\python.exe
+
+Now make sure the terminal is also running the same VENV.
+Do so by running the activate.bat file.
+type into the terminal venv\Scripts\activate.bat
+And you'll see the parenthetical name of the virtual environment
+
+Then type uvicorn main:app in the terminal 
+and it will give you a running link,
+follow the link to see what's happening.
+
+If you run this with uvicorn main:app --reload
+The webpage will refresh everytime you save the.py file,
+otherwise you'll have to save and restart the server.
+
+NOTE: 
+fast api is really useful for easily changing things to JSON
+
+the decorator "@app.." turns what the function is doing to an 
+actual path operation
+
+If you don't change
