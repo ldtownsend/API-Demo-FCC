@@ -1,0 +1,25 @@
+Path Operations
+Your API is just a bunch of path operations
+
+@app.get('/')
+def root():
+    return {"message": "Welcome to my API"}
+
+"@" is a decorator
+"app" a fast api instance
+".get()" is a method, an http method
+"'/'" is the url or path
+"def root()" is the path operation function, which give the user
+    some information when they go to that path
+
+Reference for determining the appropriate http function to use:
+https://developer.mozilla.org/en-US/docs/web/http/methods
+
+Reminders: 
+Get the terminal back on the venv with venv\Scripts\activate.bat
+Then to get the application running with uvicorn main:app --reload
+
+
+Made a Postman account, will use this for the remainder of the course
+-- 8:05 AM -- 57:45 in the video
+
