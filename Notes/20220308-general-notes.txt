@@ -1,0 +1,53 @@
+Reminders: 
+Get the terminal back on the venv with venv\Scripts\activate.bat
+Then to get the application running with uvicorn main:app --reload
+
+Get vs Post requests:
+
+Get request:
+data comes from the API server
+kind of read only
+Getting Data from the API server
+
+Post request:
+send data to the API server
+- ex: Title of post, Content of post
+allows you to write
+Posting data to the API server
+
+After making:
+@app.post("/createposts")
+def create_posts():
+    return {'message': 'successfully created post'}
+
+Go to Postman, change the dropdown to post and add the end of the path to the
+URL. Then go into the Body tab (below the URL) and change the type from 'Text'
+to JSON.
+
+def create_posts(payload: dict = Body(...)):
+    - payload is a variable that could be any name
+    - set the type to dictionary
+    - Body() is part of the FastAPI library
+    - The ... means ?
+
+Why We Need Schema (slide)
+- It's a pain to get all the values from the body
+- The client can send whatever data, we don't want to take arbitrary data types
+- The data isn't getting validated
+- We ultimately want to force the client to send data in a schema that we expect
+
+Library called pydantic
+- (should already be in venv/Lib folder)
+- https://pydantic-docs.helpmanual.io/usage/types/
+
+CRUD:
+- Action - http verb - URL        - - notes
+
+- Create - Post      - /posts     - @app.post("/posts") - always going to be a Post request
+- Read   - Get       - /posts/:id - @app.get("/posts/{id}") - detailed info on one individual post
+- Read   - Get       - /posts     - @app.get("/posts") - multiple posts
+- Update - Put/Patch - /posts/:id - @app.put("/posts/{id}") - Put changes the entire post, Patch changes one specific field
+- Delete - Delete    - /posts/:id - @app.delete("/posts/{id}")
+
+
+Ended at 2:01:50
